@@ -9,6 +9,10 @@ public class WebAppDriverManager {
 
     public static WebDriver driver;
 
+    /**
+     * This method creates the webdriver instance for chrome browser and return it to the setup method
+     * @return
+     */
     public WebDriver getWebDriver() {
         if(driver==null) {
             WebDriverManager.chromedriver().setup();

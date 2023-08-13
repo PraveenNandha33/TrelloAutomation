@@ -10,7 +10,6 @@ public class DriverHooks {
 
    private static WebDriver driver;
 
-
     @Before
     public void setup() {
         WebAppDriverManager webAppDriverManager=new WebAppDriverManager();
@@ -18,7 +17,7 @@ public class DriverHooks {
         driver.manage().window().maximize();
     }
 
-    public static WebDriver getDriver(){
+    public WebDriver getDriver(){
         return driver;
     }
 

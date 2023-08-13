@@ -7,15 +7,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import java.util.logging.Logger;
 
 import static StepDefinitions.CommonStepDefinitions.getElement;
 
 public class DashboardPageStepDefinitions {
 
-    private static WebDriver driver= DriverHooks.getDriver();
-    private Logger logger = Logger.getLogger(DashboardPageStepDefinitions.class.getName());
+    private  WebDriver driver;
     Actions action;
+    public DashboardPageStepDefinitions(DriverHooks hooks){
+        this.driver= hooks.getDriver();
+    }
+
 
     By createButton= By.xpath("//li[@data-testid='create-board-tile']");
     By createBoardBox=By.xpath("//button[contains(@data-testid, 'create-board')]");
@@ -36,10 +38,7 @@ public class DashboardPageStepDefinitions {
         getElement(createBoardBox).click();
         getElement(boardTitleInputField).sendKeys(boardName);
         getElement(createBoardSubmitButton).click();
-
-
     }
-
 
     @And("I create two list with the name {string} and {string}")
     public void iCreateTwoListWithTheNameAnd(String list1, String lis2) {
@@ -48,7 +47,6 @@ public class DashboardPageStepDefinitions {
         getElement(ListInputField).sendKeys(lis2);
         getElement(addListButton).click();
     }
-
 
     @Then("I add card to the ListA with the name {string}")
     public void addCardToTheListA(String cardName) {
@@ -73,6 +71,4 @@ public class DashboardPageStepDefinitions {
         System.out.println("XCOORDINATE is "+xcoordinate);
         System.out.println("YCOORDINATE is "+yCoordinate);
     }
-
-
 }

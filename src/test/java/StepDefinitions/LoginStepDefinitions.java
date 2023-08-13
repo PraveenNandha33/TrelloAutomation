@@ -11,11 +11,14 @@ import org.openqa.selenium.WebElement;
 import javax.annotation.Nullable;
 
 import static StepDefinitions.CommonStepDefinitions.getElement;
+import static StepDefinitions.CommonStepDefinitions.waitForMilliseconds;
 
 public class LoginStepDefinitions {
 
-    private static WebDriver driver= DriverHooks.getDriver();
-    CommonStepDefinitions csd=new CommonStepDefinitions();
+    private WebDriver driver;
+    public LoginStepDefinitions(DriverHooks hooks){
+        this.driver= hooks.getDriver();
+    }
 
     By homePageLogin=By.linkText("Log in");
     By usernameField=By.id("user");
@@ -47,7 +50,7 @@ public class LoginStepDefinitions {
     public void enterUsernameAndPasswordAndClickLogin(String userName, String password) throws InterruptedException {
         getElement(usernameField).sendKeys(userName);
         getElement(continueBtn).click();
-        csd.waitForMilliseconds(2000);
+        waitForMilliseconds(2000);
         getElement(passwordField).sendKeys(password);
         getElement(loginButton).click();
     }

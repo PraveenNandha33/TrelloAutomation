@@ -54,6 +54,12 @@
             <version>5.4.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>6.11.0</version> <!-- Replace with your Cucumber version -->
+        </dependency>
+
     </dependencies>
 
 </project>
