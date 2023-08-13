@@ -1,7 +1,7 @@
 @TrelloAutomation
 Feature: This feature files contains scenarios about card movement between lists
 
-  @TrelloAutomation
+  @TrelloAutomation @MSEdge
   Scenario:User moves the card between two lists successfully and then logsout
     Given I navigate to the URL "https://trello.com/"
     Then I click on login button
