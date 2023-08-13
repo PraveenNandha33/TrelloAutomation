@@ -13,6 +13,7 @@ public class DriverHooks {
 
     @Before
     public void setup(Scenario scenario) {
+        //Chrome will act as a default browser if the scenario has no tags
         String browserType="chrome";
         WebAppDriverManager webAppDriverManager = new WebAppDriverManager();
         if(scenario.getSourceTagNames().contains("@fireFox")) {
