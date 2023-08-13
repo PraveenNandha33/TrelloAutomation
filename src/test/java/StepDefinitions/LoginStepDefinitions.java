@@ -1,14 +1,10 @@
 package StepDefinitions;
 
 import Hooks.DriverHooks;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import javax.annotation.Nullable;
 
 import static StepDefinitions.CommonStepDefinitions.getElement;
 import static StepDefinitions.CommonStepDefinitions.waitForMilliseconds;
