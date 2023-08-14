@@ -20,7 +20,6 @@ public class DashboardPageStepDefinitions {
 
 
     By createButton= By.xpath("//li[@data-testid='create-board-tile']");
-    By createBoardBox=By.xpath("//button[contains(@data-testid, 'create-board')]");
     By boardTitleInputField = By.xpath("//input[@data-testid='create-board-title-input']");
     By createBoardSubmitButton=By.xpath("//button[@data-testid='create-board-submit-button']");
     By ListInputField=By.xpath("//input[@class='list-name-input']");
@@ -32,10 +31,10 @@ public class DashboardPageStepDefinitions {
     By cardFromFirstList=By.xpath("//a[@data-testid='trello-card']");
     By secondListDropField=By.xpath("(//div[@class='list-cards u-fancy-scrollbar js-list-cards js-sortable ui-sortable'])[2]");
     By secondListCard=By.xpath("//div[contains(@class,'list-card-details js-card-details')]");
+
     @Then("I create board with the name {string}")
     public void createBoardWithName(String boardName) {
         getElement(createButton).click();
-        getElement(createBoardBox).click();
         getElement(boardTitleInputField).sendKeys(boardName);
         getElement(createBoardSubmitButton).click();
     }
